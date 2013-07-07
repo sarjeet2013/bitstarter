@@ -9,7 +9,7 @@ var app = express.createServer(express.logger());
 		var buffer = new Buffer(512);
 //		fs.read(fd, buffer);
 		app.get('/', function(request, response) {
-  			response.send(buffer.toString("utf-8", fs.readFileSync("index.html")))});
+  			response.send(buffer.toString(fs.readFileSync("index.html")),'utf8')});
 //});
 		
 //	});
