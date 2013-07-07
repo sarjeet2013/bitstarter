@@ -3,7 +3,7 @@ var fs = require('fs');
 
 var app = express.createServer(express.logger());
 
-fs.open('~/bitstarter/index.html', 'r', function(err, fd) {
+fs.open('./index.html', 'r', function(err, fd) {
 	fs.fstat(fd, function(err, stats) {
 		var bufferSize = stats.size,
 		    buffer = new Buffer(bufferSize);
