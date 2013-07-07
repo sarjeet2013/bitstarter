@@ -9,7 +9,7 @@ fs.open('./index.html', 'r', function(err, fd) {
 		    buffer = new Buffer(bufferSize);
 		fs.read(fd, buffer);
 		app.get('/', function(request, response) {
-  			response.send(buffer.toString('utf-8'));
+  			response.send(buffer.toString('utc 8', fs.readFileSync("index.html")))});
 });
 		
 	});
