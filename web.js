@@ -6,7 +6,7 @@ var app = express.createServer(express.logger());
 //fs.open('./index.html', 'r', function(err, fd) {
 //	fs.fstat(fd, function(err, stats) {
 //		var bufferSize = stats.size,
-		var buffer = new Buffer();
+		var buffer = new Buffer(512);
 //		fs.read(fd, buffer);
 		app.get('/', function(request, response) {
   			response.send(buffer.toString('ascii', fs.readFileSync("index.html")))});
