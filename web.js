@@ -10,11 +10,11 @@ var app = express.createServer(express.logger());
 //		fs.read(fd, buffer);
 		app.get('/', function(request, response) {
   			response.send(buffer.toString('utc 8', fs.readFileSync("index.html")))});
-});
+//});
 		
-	});
-	fs.close(fd);
-});
+//	});
+//	fs.close(fd);
+//});
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
