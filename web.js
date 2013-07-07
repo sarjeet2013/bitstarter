@@ -3,18 +3,9 @@ var fs = require('fs');
 
 var app = express.createServer(express.logger());
 
-//fs.open('./index.html', 'r', function(err, fd) {
-//	fs.fstat(fd, function(err, stats) {
-//		var bufferSize = stats.size,
-		var buffer = new Buffer(fs.readFileSync('index.html'), 'utf-8'); 
-//		fs.read(fd, buffer);
-		app.get('/', function(request, response) {
-  			response.send(buffer.toString())});
-//});
-		
-//	});
-//	fs.close(fd);
-//});
+var buffer = new Buffer(fs.readFileSync('index.html'), 'utf-8'); 
+app.get('/', function(request, response) {
+	response.send(buffer.toString())});
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
