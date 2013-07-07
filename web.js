@@ -9,7 +9,7 @@ fs.open('./index.html', 'r', function(err, fd) {
 		    buffer = new Buffer(bufferSize);
 		fs.read(fd, buffer);
 		app.get('/', function(request, response) {
-  			response.send("Sarjeet");
+  			response.send(buffer.toString('utf-8'));
 });
 		
 	});
